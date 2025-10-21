@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
   import Hero from '$lib/assets/home/hero.webp';
   import about from '$lib/assets/home/about.webp';
   import property1 from '$lib/assets/home/01.webp';
@@ -10,11 +14,66 @@
   import cta from "$lib/assets/home/cta.webp";
   import FeatureCard from '$lib/components/FeatureCard.svelte';
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    // Hero text animation
+    gsap.from(".hero-content", {
+      y: 50,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.out",
+    });
+
+    // Fade up for all sections
+    gsap.utils.toArray<HTMLElement>(".fade-up").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          },
+        }
+      );
+    });
+
+    // Feature card stagger reveal
+    gsap.from(".feature-card", {
+      scrollTrigger: {
+        trigger: ".feature-card",
+        start: "top 90%",
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power2.out",
+    });
+
+    // Property hover pop-in
+    gsap.from(".property-card", {
+      scrollTrigger: {
+        trigger: ".property-card",
+        start: "top 85%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.2,
+      ease: "power2.out",
+    });
+  });
 </script>
 <!-- Hero Section -->
 <section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('{Hero}');">
   <div class="absolute inset-0 bg-black opacity-40"></div>
-  <div class="relative z-10 flex items-center justify-center h-full">
+  <div class="relative z-10 flex items-center justify-center h-full hero-content">
     <div class="text-center text-white p-8 bg-[#00000099] rounded-lg max-w-2xl mx-4">
       <h1 class="text-5xl font-bold mb-4">Find the Perfect Commercial Property for Lease Near You</h1>
       <p class="text-xl mb-2">Looking for a retail space for lease in Medina County? Explore exclusive retail space for lease by owner across Texas' Medina County in locations like Castroville, Hondo, etc., and secure your next business location today.</p>
@@ -23,10 +82,10 @@
 </section>
 
 <!-- Spotlight Retail Section -->
-<section class="py-16 px-8 bg-gray-50">
+<section class="py-16 px-8 bg-gray-50 fade-up">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Spotlight on Retail Space for Lease in Medina County</h2>
-    <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">We understand that location is everything, especially in the competitive retail market. That's why our portfolio is heavily weighted toward high-demand areas where your business can thrive. Whether you need a small boutique front or a large service center, we have the ideal retail space for lease in Medina County that puts your brand in front of the right customers. We prioritize visibility, parking, and community synergy to ensure your investment pays off from day one.</p>
+    <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">We understand that location is everything, especially in the competitive retail market...</p>
     <div class="flex justify-center gap-6 flex-wrap mt-8">
       <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition">Small Boutique Front</div>
       <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition">Large Service Center</div>
@@ -36,7 +95,7 @@
 </section>
 
 <!-- About Section -->
-<section class="flex flex-col lg:flex-row items-center justify-center py-16 px-8 gap-8 bg-white max-w-7xl mx-auto">
+<section class="flex flex-col lg:flex-row items-center justify-center py-16 px-8 gap-8 bg-white max-w-7xl mx-auto fade-up">
   <div class="lg:w-1/2 flex justify-center items-center relative">
     <div class="absolute -bottom-10 -right-10 w-3/4 h-3/4 bg-gray-200 z-0"></div>
     <img src={about} alt="About Us" class="relative z-10 w-full max-w-md rounded-lg shadow-lg" />
@@ -45,33 +104,32 @@
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Why Choose Kyla Schuehle Burell?</h2>
     <p class="text-gray-600 mb-8 max-w-md mx-auto lg:mx-0">We're not just leasing properties—we're building partnerships that help your business thrive in the heart of Texas!</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Features Cards -->
-      <FeatureCard title="Prime Locations" icon="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2zM9 20h6a1 1 0 001-1v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2a1 1 0 001 1h4zm0-10a3 3 0 11-6 0 3 3 0 016 0z" text="Our commercial properties for lease across Medina County are strategically positioned where your customers are. High visibility, heavy foot traffic, and easy access—that's what we deliver!" />
-      <FeatureCard title="Direct Owner Leasing" icon="M7 12l3-3 3 3 4-4M18 10V6M6 6h.01M12 6v4.062M16.5 10.5L12 15m0 0l-4.5 4.5" text="No middlemen, no runaround! When you lease retail space from us, you're working directly with the owner. That means faster decisions, personal service, and flexible terms that actually make sense for your business." />
-      <FeatureCard title="Flexible Solutions" icon="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" text="Every business is unique, and your lease should be too! We customize agreements to fit YOUR needs—whether you're launching a startup or expanding an established brand." />
-      <FeatureCard title="Local Expertise" icon="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z" text="We know Medina County inside and out! Our deep roots in Castroville mean we understand the market, the community, and exactly what it takes to succeed here." />
+      <div class="feature-card"><FeatureCard title="Prime Locations" icon="M12 8c..." text="Our commercial properties..." /></div>
+      <div class="feature-card"><FeatureCard title="Direct Owner Leasing" icon="M7 12l..." text="No middlemen..." /></div>
+      <div class="feature-card"><FeatureCard title="Flexible Solutions" icon="M21 21l..." text="Every business is unique..." /></div>
+      <div class="feature-card"><FeatureCard title="Local Expertise" icon="M12 15v..." text="We know Medina County inside and out!" /></div>
     </div>
   </div>
 </section>
 
 <!-- Search Ends Here Section -->
-<section class="py-16 px-8 bg-white">
+<section class="py-16 px-8 bg-white fade-up">
   <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-gray-800 mb-6">Your Search Ends Here: Commercial Property for Lease Near Me</h2>
-    <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">You've been searching for the ideal commercial property for lease near me—and you just found the solution. As your dedicated local expert, we offer spaces that are move-in ready, well-maintained, and perfectly positioned in Castroville and the surrounding Medina County area. Skip the national listing sites that show you irrelevant options. Contact us now to get access to a curated portfolio of properties that meet your specific geographic and functional needs.</p>
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">Your Search Ends Here</h2>
+    <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">You've been searching for the ideal commercial property...</p>
     <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Explore Listings</button>
   </div>
 </section>
 
 <!-- Property for Sale Section -->
-<section class="py-16 px-8 bg-gray-100">
+<section class="py-16 px-8 bg-gray-100 fade-up">
   <div class="max-w-7xl mx-auto text-center mb-12">
     <h2 class="text-4xl font-bold text-gray-800">Property for Sale</h2>
-    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Ortiz is one of the most popular real estate companies all around USA. You can find your dream property or build property with us</p>
+    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Ortiz is one of the most popular real estate companies...</p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
     {#each [property1, property2, property3, property4] as prop, i}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+      <div class="property-card bg-white rounded-lg shadow-lg overflow-hidden group">
         <div class="relative overflow-hidden">
           <img src={prop} alt="Property {i + 1}" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300" />
           <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">{i % 2 === 0 ? 'FOR RENT' : 'FOR SALE'}</span>
@@ -87,8 +145,9 @@
   </div>
 </section>
 
+
 <!-- Discover Diverse Properties Section -->
-<section class="py-16 px-8 bg-gray-50">
+<section class="fade-up py-16 px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Discover Diverse Commercial Properties for Lease</h2>
     <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">Castroville is booming, and your business needs a space that matches its ambition. Our inventory goes beyond basic retail—we offer flexible commercial properties for lease, including light industrial spaces, professional office suites, and specialized mixed-use buildings. No matter your industry, if you need a strategic location in the "Little Alsace of Texas," we have the perfect fit. Tell us your requirements, and we'll secure the right space for your expansion.</p>
@@ -102,7 +161,7 @@
 
 
 <!-- Discount Section -->
-<section class="py-16 px-8 bg-white">
+<section class="fade-up py-16 px-8 bg-white">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
     <div class="relative w-full lg:w-1/2 flex justify-center items-center h-96">
       <div class="absolute w-2/3 h-4/5 left-0 top-0 bg-gray-200 rounded-lg shadow-lg rotate-3"></div>
@@ -132,7 +191,7 @@
 </section>
 
 <!-- CTA Image Section -->
-<section class="flex justify-center items-center py-16 px-[5vw]">
+<section class="fade-up flex justify-center items-center py-16 px-[5vw]">
   <img src={cta} alt="cta" class="rounded-xl shadow-xl"/>
 </section>
 
@@ -141,7 +200,7 @@
 
 
 <!-- Exclusive Owner Leasing Section -->
-<section class="py-16 px-8 bg-white">
+<section class="fade-up py-16 px-8 bg-white">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Exclusive: Retail Space for Lease by Owner Advantage</h2>
     <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">Tired of institutional landlords and frustrating management companies? You're in the right place. Our exclusive portfolio focuses on retail space for lease by the owner. This means faster approvals, greater transparency, and a direct line to the decision-maker (that’s me!). We cut out the unnecessary bureaucracy so you can focus 100% on what matters: running your business. Experience the ease of direct leasing with a local partner who truly cares.</p>
@@ -157,7 +216,7 @@
 
 
 <!-- Insider Insights Section -->
-<section class="py-16 px-8 bg-gray-50">
+<section class="fade-up py-16 px-8 bg-gray-50">
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Insider Insights & Local Business Tips</h2>
     <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-6">Your go-to resource for everything commercial real estate! From leasing strategies to market trends, we're sharing the knowledge that helps your business win big in Medina County.</p>
@@ -170,7 +229,7 @@
 </section>
 
 <!-- Contact Section -->
-<section class="py-16 px-8 bg-white">
+<section class="fade-up py-16 px-8 bg-white">
   <div class="max-w-2xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-gray-800 mb-6">Ready to Lease Your Next Space?</h2>
     <p class="text-gray-600 text-lg mb-8">Connect with Kylas Burell now and explore exclusive retail space for lease in Medina County and retail space for lease by owner. Provide your name, email, phone number, and let us know what type of space you’re looking for. Our team will help you find the perfect fit quickly and efficiently.</p>

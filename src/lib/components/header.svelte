@@ -35,7 +35,7 @@
         <li><a href="/services" class="hover:text-[#30A7E3]">Services</a></li>
         <li><a href="/features" class="hover:text-[#30A7E3]">Features</a></li>
         <li><a href="/properties" class="hover:text-[#30A7E3]">Properties</a></li>
-        <li><a href="/pages" class="hover:text-[#30A7E3]">Pages</a></li>
+        <li><a href="/about" class="hover:text-[#30A7E3]">About</a></li>
         <li><a href="/agent" class="hover:text-[#30A7E3]">Agent</a></li>
         <li><a href="/contact" class="hover:text-[#30A7E3]">Contact</a></li>
       </ul>
@@ -67,7 +67,7 @@
         <li><a href="/services" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Services</a></li>
         <li><a href="/features" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Features</a></li>
         <li><a href="/properties" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Properties</a></li>
-        <li><a href="/pages" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Pages</a></li>
+        <li><a href="/about" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>About</a></li>
         <li><a href="/agent" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Agent</a></li>
         <li><a href="/contact" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Contact</a></li>
       </ul>
