@@ -19,7 +19,7 @@
   });
 </script>
 
-<header class="sticky w-full h-fit z-50 transition-all duration-300 {isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}">
+<header class="sticky top-0 w-full h-fit z-50 transition-all duration-300 {isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}">
 
   <!-- Main Navigation -->
   <nav class="bg-white md:bg-transparent py-4 px-4">
@@ -39,15 +39,6 @@
         <li><a href="/agent" class="hover:text-[#30A7E3]">Agent</a></li>
         <li><a href="/contact" class="hover:text-[#30A7E3]">Contact</a></li>
       </ul>
-
-      <!-- Search Icon (Desktop) -->
-      <div class="hidden lg:block">
-        <button class="text-gray-700 hover:text-[#30A7E3]">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
-      </div>
 
       <!-- Mobile Menu Button -->
       <div class="lg:hidden">
