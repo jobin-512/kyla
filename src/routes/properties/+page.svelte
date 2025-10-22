@@ -13,6 +13,12 @@
   });
 </script>
 
+  <svelte:head>
+    <title>Commercial Lease in Medina County – Hondo & Castroville TX</title>
+    <meta name="description" content="Discover available commercial properties in Hondo and Castroville TX. Lease prime office and retail spaces in Medina County with trusted real estate support.">
+    <meta name="keywords" content="commercial lease medina county,Commercial Properties for Lease in Hondo tx,Castroville, TX Commercial Real Estate Properties for Lease">
+  </svelte:head>
+
 <section class="relative overflow-hidden bg-white text-gray-800">
   <!-- Hero Section -->
   <div class="relative py-20 px-6 md:px-20 text-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 text-white">

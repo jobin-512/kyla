@@ -23,6 +23,12 @@
   });
 </script>
 
+  <svelte:head>
+    <title>Castroville Commercial Space – Secure Your Lease Today</title>
+    <meta name="description" content="Contact us to learn about available office space for lease and commercial real estate in Castroville TX. Our team helps you find the perfect space for your business">
+    <meta name="keywords" content="space for lease castroville, Castroville, TX Office Space for Lease,Castroville, CA Commercial Real Estate For Lease">
+  </svelte:head>
+
 <!-- Hero Section -->
 <section
   class="relative bg-cover bg-center h-[60vh] flex items-center justify-center"

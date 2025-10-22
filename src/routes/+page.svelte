@@ -70,6 +70,13 @@
     });
   });
 </script>
+
+  <svelte:head>
+    <title>Commercial &amp; Retail Properties for Lease in Castroville, TX</title>
+    <meta name="description" content="Discover flexible commercial and retail properties for lease in Castroville, TX. Explore listings that fit your business goals with trusted local support.">
+    <meta name="keywords" content="commercial properties for lease castroville tx,commercial property for lease near me,castroville retail space for lease by owner,Retail Space for Lease in Medina County">
+  </svelte:head>
+
 <!-- Hero Section -->
 <section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('{Hero}');">
   <div class="absolute inset-0 bg-black opacity-40"></div>

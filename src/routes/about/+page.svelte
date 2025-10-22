@@ -21,6 +21,12 @@
   });
 </script>
 
+  <svelte:head>
+    <title>Trusted Commercial Leasing Expert in Medina County</title>
+    <meta name="description" content="Explore high-traffic commercial space for lease in Castroville TX, including office space in Medina County. Secure your ideal property today with expert lease real estate guidance.">
+    <meta name="keywords" content="commercial space for lease hondo,castroville office space for lease,office space for lease medina county,Commercial space for lease castroville texas,Office Space For Lease in Castroville TX,lease real estate medina county">
+  </svelte:head>
+
 <!-- Hero -->
 <section class="relative h-[70vh] bg-center bg-cover" style="background-image:url('{aboutHero}')">
   <div class="absolute inset-0 bg-black/50"></div>
