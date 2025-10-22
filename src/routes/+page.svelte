@@ -13,6 +13,7 @@
   import apartmentDiscount from '$lib/assets/home/choose2.webp';
   import cta from "$lib/assets/home/cta.webp";
   import FeatureCard from '$lib/components/FeatureCard.svelte';
+  import banner from '$lib/assets/home/banner.mp4';
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -78,7 +79,15 @@
   </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('{Hero}');">
+<section class="relative h-[80vh] overflow-hidden">
+  <video
+    class="absolute inset-0 w-full h-full object-cover"
+    src={banner}
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
   <div class="absolute inset-0 bg-black opacity-40"></div>
   <div class="relative z-10 flex items-center justify-center h-full hero-content">
     <div class="text-center text-white p-8 bg-[#00000099] rounded-lg max-w-2xl mx-4">
