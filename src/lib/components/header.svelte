@@ -32,13 +32,14 @@
       <!-- Desktop Menu -->
       <ul class="hidden lg:flex space-x-8 text-lg font-medium text-gray-700">
         <li><a href="/" class="hover:text-[#30A7E3]">Home</a></li>
-        <li><a href="/services" class="hover:text-[#30A7E3]">Services</a></li>
-        <li><a href="/features" class="hover:text-[#30A7E3]">Features</a></li>
         <li><a href="/properties" class="hover:text-[#30A7E3]">Properties</a></li>
         <li><a href="/about" class="hover:text-[#30A7E3]">About</a></li>
-        <li><a href="/agent" class="hover:text-[#30A7E3]">Agent</a></li>
         <li><a href="/contact" class="hover:text-[#30A7E3]">Contact</a></li>
       </ul>
+
+      <div class="hidden lg:flex space-x-8 text-lg font-medium text-gray-700">
+        <a href="/contact" class=" px-4 py-2 border border-[#30A7E3] rounded-md font-bold  hover:bg-blue-500 bg-[#30A7E3] text-white" >Get in Touch</a>
+      </div>
 
       <!-- Mobile Menu Button -->
       <div class="lg:hidden">
@@ -64,11 +65,8 @@
       </button>
       <ul class="mt-8 space-y-4 text-lg font-medium text-gray-700">
         <li><a href="/" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Home</a></li>
-        <li><a href="/services" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Services</a></li>
-        <li><a href="/features" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Features</a></li>
         <li><a href="/properties" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Properties</a></li>
         <li><a href="/about" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>About</a></li>
-        <li><a href="/agent" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Agent</a></li>
         <li><a href="/contact" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Contact</a></li>
       </ul>
     </div>
