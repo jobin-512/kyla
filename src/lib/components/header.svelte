@@ -33,6 +33,7 @@
       <ul class="hidden lg:flex space-x-8 text-lg font-medium text-gray-700">
         <li><a href="/" class="hover:text-[#30A7E3]">Home</a></li>
         <li><a href="/properties" class="hover:text-[#30A7E3]">Properties</a></li>
+        <li><a href="/livestock" class="block hover:text-[#30A7E3]">Livestock</a></li>
         <li><a href="/about" class="hover:text-[#30A7E3]">About</a></li>
         <li><a href="/contact" class="hover:text-[#30A7E3]">Contact</a></li>
       </ul>
@@ -66,6 +67,7 @@
       <ul class="mt-8 space-y-4 text-lg font-medium text-gray-700">
         <li><a href="/" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Home</a></li>
         <li><a href="/properties" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Properties</a></li>
+        <li><a href="/livestock" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Livestock</a></li>
         <li><a href="/about" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>About</a></li>
         <li><a href="/contact" class="block hover:text-[#30A7E3]" on:click={toggleMenu}>Contact</a></li>
       </ul>

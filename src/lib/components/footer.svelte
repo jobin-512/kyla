@@ -1,6 +1,23 @@
 <script lang="ts">
   // Optional: You can define quick links or popular posts as arrays if you want to dynamically render them
-  const quickLinks = ["Services", "Agent", "Properties", "Features", "From Blog", "Contact"];
+  const quickLinks = 
+  [
+    {title: "Services",
+      href: "/services"
+    }, 
+    {title: "Properties",
+      href: "/properties"
+    }, 
+    {title: "Livestock",
+      href: "/livestock"
+    }, 
+    {title: "From Blog",
+      href: "/blog"
+    }, 
+    {title: "Contact",
+      href: "/contact"
+    }
+  ];
   const popularPosts = [
     { title: "Duplex Villa Design", desc: "Lorem ipsum dolor sit amet, tur acinglit sed do eius" },
     { title: "Duplex Villa Design", desc: "Lorem ipsum dolor sit amet, tur acinglit sed do eius" }
@@ -33,7 +50,7 @@
       <h3 class="text-xl font-bold mb-4">Quick Link</h3>
       <ul class="text-gray-300 text-sm space-y-2">
         {#each quickLinks as link}
-          <li class="hover:text-white cursor-pointer">{link}</li>
+          <li><a href={link.href} class="hover:text-white cursor-pointer">{link.title}</a></li>
         {/each}
       </ul>
     </div>
@@ -41,10 +58,9 @@
     <!-- Contact Us -->
     <div>
       <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-      <p class="text-gray-300 text-sm mb-2"><strong>Address:</strong> 256, 1st AVE, Manchester, 125, North England</p>
-      <p class="text-gray-300 text-sm mb-2"><strong>Telephone:</strong> +88 (012) 356 958 45</p>
-      <p class="text-gray-300 text-sm mb-2"><strong>Email:</strong> info@example.com</p>
-      <p class="text-gray-300 text-sm"><strong>Web:</strong> www.example.com</p>
+      <p class="text-gray-300 text-sm mb-2"><strong>Address:</strong> 2439 Hwy 90 West, Suite 101, Castroville, TX 78009</p>
+      <p class="text-gray-300 text-sm mb-2"><strong>Telephone:</strong> 1-210-416-0980</p>
+      <p class="text-gray-300 text-sm mb-2"><strong>Email:</strong> kylaburell@gmail.com</p>
     </div>
   </div>
 

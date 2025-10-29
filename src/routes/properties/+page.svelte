@@ -1,6 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import gsap from "gsap";
+  import p1 from "$lib/assets/prop/A-Personalized-Approach-to-Commercial-Real-Estate.jpg";
+  import p2 from "$lib/assets/prop/Office-Spaces.jpg";
+  import p3 from "$lib/assets/prop/Retail-Locations.jpg";
+  import p4 from "$lib/assets/prop/Warehouses-&-Industrial.jpg";
+  import p5 from "$lib/assets/prop/Commercial-Properties-for-Lease-in-Hondo,-TX.jpg";
+  import p6 from "$lib/assets/prop/Castroville,-TX-Commercial-Real-Estate.jpg";
+
 
   onMount(() => {
     gsap.from(".fade-up", {
@@ -50,8 +57,8 @@
     </div>
 
     <!-- Image Placeholder -->
-    <div class="fade-up rounded-2xl bg-gray-200 h-80 flex items-center justify-center shadow-inner">
-      <span class="text-gray-500 italic">[ Image Placeholder — Commercial Building ]</span>
+    <div class="fade-up rounded-2xl  h-80 flex items-center justify-center shadow-inner">
+      <img src={p1} alt="A Personalized Approach to Commercial Real Estate" class="h-full w-full object-cover rounded-lg">
     </div>
   </div>
 
@@ -66,8 +73,8 @@
     <div class="grid md:grid-cols-3 gap-10 mt-14">
       <!-- Office -->
       <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <div class="bg-gray-200 h-48 mb-6 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500 italic">[ Office Space Image ]</span>
+        <div class="h-48 mb-6 rounded-lg flex items-center justify-center">
+          <img src={p2} alt="Office Spaces" class="h-full w-full object-cover rounded-lg">
         </div>
         <h3 class="text-xl font-semibold text-blue-900 mb-2">Office Spaces</h3>
         <p class="text-gray-600">Professional environments for startups and established businesses alike.</p>
@@ -75,8 +82,8 @@
 
       <!-- Retail -->
       <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <div class="bg-gray-200 h-48 mb-6 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500 italic">[ Retail Property Image ]</span>
+        <div class="h-48 mb-6 rounded-lg flex items-center justify-center">
+          <img src={p3} alt="Retail Locations" class="h-full w-full object-cover rounded-lg">
         </div>
         <h3 class="text-xl font-semibold text-blue-900 mb-2">Retail Locations</h3>
         <p class="text-gray-600">High-visibility spaces to attract customers and boost brand presence.</p>
@@ -84,8 +91,8 @@
 
       <!-- Warehouse -->
       <div class="bg-white rounded-2xl shadow-lg p-8 fade-up">
-        <div class="bg-gray-200 h-48 mb-6 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500 italic">[ Warehouse Image ]</span>
+        <div class="h-48 mb-6 rounded-lg flex items-center justify-center">
+          <img src={p4} alt="Warehouses & Industrial" class="h-full w-full object-cover rounded-lg">
         </div>
         <h3 class="text-xl font-semibold text-blue-900 mb-2">Warehouses & Industrial</h3>
         <p class="text-gray-600">Adaptable spaces for logistics, storage, or light manufacturing.</p>
@@ -97,8 +104,8 @@
   <div class="max-w-6xl mx-auto py-20 px-6 md:px-12 space-y-20">
     <!-- Hondo -->
     <div class="grid md:grid-cols-2 gap-10 items-center fade-up">
-      <div class="rounded-2xl bg-gray-200 h-72 flex items-center justify-center">
-        <span class="text-gray-500 italic">[ Hondo Property Image ]</span>
+      <div class="rounded-2xl h-72 flex items-center justify-center">
+        <img src={p5} alt="Commercial Properties for Lease in Hondo, TX" class="h-full w-full object-cover rounded-lg">
       </div>
       <div>
         <h2 class="text-2xl font-bold text-blue-900 mb-4">Commercial Properties for Lease in Hondo, TX</h2>
@@ -112,8 +119,8 @@
 
     <!-- Castroville -->
     <div class="grid md:grid-cols-2 gap-10 items-center fade-up md:flex-row-reverse">
-      <div class="rounded-2xl bg-gray-200 h-72 flex items-center justify-center">
-        <span class="text-gray-500 italic">[ Castroville Property Image ]</span>
+      <div class="rounded-2xl h-72 flex items-center justify-center">
+        <img src={p6} alt="Commercial Properties for Lease in Castroville, TX" class="h-full w-full object-cover rounded-lg">
       </div>
       <div>
         <h2 class="text-2xl font-bold text-blue-900 mb-4">Castroville, TX Commercial Real Estate</h2>
