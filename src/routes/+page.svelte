@@ -5,10 +5,10 @@
 
   import Hero from '$lib/assets/home/hero.webp';
   import about from '$lib/assets/home/about.webp';
-  import property1 from '$lib/assets/home/01.webp';
-  import property2 from '$lib/assets/home/02.webp';
-  import property3 from '$lib/assets/home/03.webp';
-  import property4 from '$lib/assets/home/04.webp';
+  import property1 from '$lib/assets/home/1.webp';
+  import property2 from '$lib/assets/home/2.webp';
+  import property3 from '$lib/assets/home/3.webp';
+  import property4 from '$lib/assets/home/4.webp';
   import houseDiscount from '$lib/assets/home/choose1.webp';
   import apartmentDiscount from '$lib/assets/home/choose2.webp';
   import cta from "$lib/assets/home/cta.webp";
