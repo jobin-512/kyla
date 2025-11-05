@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Hero from "$lib/assets/contact.webp";
 
   onMount(() => {
     gsap.utils.toArray<HTMLElement>(".fade-up").forEach((el) => {
@@ -32,9 +33,9 @@
 <!-- Hero Section -->
 <section
   class="relative bg-cover bg-center h-[60vh] flex items-center justify-center"
-  style="background-image: url('/images/contact-bg.jpg')"
+  style="background-image: url('{Hero}')"
 >
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="absolute inset-0 bg-black opacity-60"></div>
   <div class="relative text-center text-white px-6 fade-up">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">
       Contact Kyla Schuehle Burell
